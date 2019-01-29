@@ -8,8 +8,12 @@ module.exports = {
   },
   'parser': 'babel-eslint',
   'parserOptions': {
+    'ecmaFeatures': {
+      'jsx': true
+    },
     'sourceType': 'module'
   },
+  'extends': ['plugin:react/recommended'],
   'rules': {
     // 'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
     'block-scoped-var': 'warn',
@@ -21,6 +25,7 @@ module.exports = {
     'curly': 'error',
     'eqeqeq': 'warn',
     'indent': ['error', 2, { 'SwitchCase': 1 }],
+    'jsx-quotes': ['error', 'prefer-double'],
     'keyword-spacing': ['error', { 'before': true, 'after': true }],
     'newline-per-chained-call': ['error', { 'ignoreChainWithDepth': 2 }],
     'no-alert': 'warn',
@@ -57,6 +62,16 @@ module.exports = {
     'space-infix-ops': ['error'],
     'switch-colon-spacing': ['error', { 'after': true, 'before': false }],
     'valid-jsdoc': ['warn', { 'requireReturn': false }],
+    'react/jsx-uses-vars': "error",
+    'react/jsx-curly-spacing': ['error', 'never'],
+    'react/jsx-equals-spacing': ['error', 'never'],
+    'react/jsx-no-bind': ['error', {
+      'ignoreRefs': true,
+      'allowArrowFunctions': false,
+      'allowFunctions': false,
+      'allowBind': false,
+      'ignoreDOMComponents': false,
+    }],
     'strict': 0
   }
 }
